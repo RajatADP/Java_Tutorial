@@ -99,3 +99,23 @@ interface BoatCar {
 }
 
 
+/**
+ * The access specifier for an overriding method can allow more, but not less,
+ * access than the overridden method. For example, a protected instance method in the
+ * superclass can be made public, but not private, in the subclass.
+ *
+ * You will get a compile-time error if you attempt to change an instance method in the
+ * superclass to a static method in the subclass, and vice versa.*/
+
+class HeadMaster {
+    protected void print() {
+        System.out.println("HeadMaster");
+    }
+}
+
+class ChildMaster extends HeadMaster {
+    // Cannot be private
+     public void print() {
+        System.out.println("ChildMaster");
+    }
+}
